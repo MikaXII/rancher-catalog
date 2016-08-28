@@ -1,0 +1,12 @@
+recalbot:
+  image: recalbox/recalbot
+  environment:
+    IRC_NICK: ${IRC_NICK}
+    IRC_HOST: ${IRC_HOST}
+    IRC_PORT: ${IRC_PORT}
+    IRC_OWNER: ${IRC_OWNER}
+    IRC_ADMINS: ${IRC_ADMINS}
+    IRC_CHANS: ${IRC_CHANS}
+    IRC_PASSWD: ${IRC_PASSWD}
+    SOPEL_EXTRA: ${SOPEL_EXTRA}
+    ENABLE_MODULES: ${ENABLE_MODULES}

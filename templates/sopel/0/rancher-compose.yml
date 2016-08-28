@@ -1,7 +1,57 @@
 .catalog:
-  name: # Name of the versioned template of the Catalog Entry
-  version: # Version of the versioned template of the Catalog Entry
-  description: # Description of the versioned template of the Catalog Entry
-  uuid: # Unique identifier to be used for upgrades. Please see note.
-  minimum_rancher_version: # The minimum version of Rancher that supports the template
-  questions: #Used to request user input for configuration options
+  name: Recalbot
+  version: v0.1
+  description: Bot IRC
+  minimum_rancher_version: v0.4
+  questions:
+         - variable: IRC_NICK
+      label: Nickname of bot
+      required: true
+      type: string
+       - variable: IRC_HOST
+      label: irc host
+      description: |
+        ex irc.freenode.net
+      required: true
+      type: string
+       - variable: IRC_PORT
+      label: Port irc
+      description: |
+        IRC_PORT
+      required: true
+      type: int
+       - variable: IRC_OWNER
+      label: Owner of bot
+      description: |
+        Owner
+      required: true
+      type: string
+       - variable: IRC_ADMINS
+      label: IRC_ADMINS
+      description: |
+        IRC_ADMINS by comma
+      required: true
+      type: string
+       - variable: IRC_CHANS
+      label: IRC_CHANS
+      description: |
+        IRC_CHANS
+      required: true
+      type: string
+    - variable: IRC_PASSWD
+      label: IRC_PASSWD
+      description: |
+        IRC_PASSWD
+      required: true
+      type: string
+    - variable: SOPEL_EXTRA
+      label: SOPEL_EXTRA
+      description: |
+        SOPEL_EXTRA
+      required: true
+      type: string
+    - variable: ENABLE_MODULES
+      label: ENABLE_MODULES
+      description: ENABLE_MODULES
+      required: true
+  
