@@ -2,7 +2,7 @@
   name: Recalbot
   version: v0.1
   description: Bot IRC
-  minimum_rancher_version: v0.4
+  minimum_rancher_version: v0.59
   questions:
          - variable: IRC_NICK
       label: Nickname of bot
