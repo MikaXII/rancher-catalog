@@ -4,5 +4,5 @@ description: |
 version: v0.1
 category: application
 maintainer: MikaXII<mika@recalbox.com>
-license: # The license
-projectURL: # A URL related to the catalog entry
+license: Creative C
+projectURL: https://github.com/MikaXII/sopel-docker
