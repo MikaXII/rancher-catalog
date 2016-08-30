@@ -2,7 +2,6 @@
   name: Recalbot
   version: v0.1
   description: Bot IRC
-  minimum_rancher_version: v0.59
   uuid: Recalbot-0
   questions:
     - variable: IRC_NICK
