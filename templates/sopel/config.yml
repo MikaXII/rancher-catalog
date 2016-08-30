@@ -1,6 +1,5 @@
 name: BOT IRC
-description: |
-  # Description of the Catalog Entry
+description: BOT IRC
 version: v0.1
 category: application
 maintainer: MikaXII<mika@recalbox.com>
