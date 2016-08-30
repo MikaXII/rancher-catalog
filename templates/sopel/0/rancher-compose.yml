@@ -3,36 +3,37 @@
   version: v0.1
   description: Bot IRC
   minimum_rancher_version: v0.59
+  uuid: Recalbot-0
   questions:
-         - variable: IRC_NICK
+    - variable: IRC_NICK
       label: Nickname of bot
       required: true
       type: string
-       - variable: IRC_HOST
+    - variable: IRC_HOST
       label: irc host
       description: |
         ex irc.freenode.net
       required: true
       type: string
-       - variable: IRC_PORT
+    - variable: IRC_PORT
       label: Port irc
       description: |
         IRC_PORT
       required: true
       type: int
-       - variable: IRC_OWNER
+    - variable: IRC_OWNER
       label: Owner of bot
       description: |
         Owner
       required: true
       type: string
-       - variable: IRC_ADMINS
+    - variable: IRC_ADMINS
       label: IRC_ADMINS
       description: |
         IRC_ADMINS by comma
       required: true
       type: string
-       - variable: IRC_CHANS
+    - variable: IRC_CHANS
       label: IRC_CHANS
       description: |
         IRC_CHANS
@@ -54,4 +55,3 @@
       label: ENABLE_MODULES
       description: ENABLE_MODULES
       required: true
-  
