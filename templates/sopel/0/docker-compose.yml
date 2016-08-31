@@ -1,5 +1,5 @@
 recalbot:
-  image: recalbox/recalbot
+  image: mikaxii/sopel-docker
   environment:
     IRC_NICK: ${IRC_NICK}
     IRC_HOST: ${IRC_HOST}
