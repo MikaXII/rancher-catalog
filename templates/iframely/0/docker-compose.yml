@@ -1,0 +1,12 @@
+recalbot:
+  image: mikaxii/iframely
+  environment:
+    HOST: ${HOST}
+    PORT: ${PORT}
+    BASE_APP_URL: ${BASE_APP_URL}
+    ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
+
+
+
+
+
