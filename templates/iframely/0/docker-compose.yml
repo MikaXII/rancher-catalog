@@ -5,7 +5,8 @@ iframely:
     PORT: ${PORT}
     BASE_APP_URL: ${BASE_APP_URL}
     ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
-  ports: ${PORT}:${PORT}
+  ports: 
+  - ${PORT}:8061/tcp
 
 
 
