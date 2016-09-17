@@ -1,4 +1,4 @@
-recalbot:
+iframely:
   image: mikaxii/iframely
   environment:
     HOST: ${HOST}
