@@ -10,7 +10,7 @@
       type: string
     - variable: PORT
       label: port
-      required:true
+      required: true
       type: int
     - variable: BASE_APP_URL
       label: For embeds that require render, baseAppUrl will be used as the host. Ex your http://domain.com
@@ -18,5 +18,5 @@
       type: string
     - variable: ALLOWED_ORIGINS
       label: Access-Control-Allow-Origin list.
-      type:string
+      type: string
       required: true
