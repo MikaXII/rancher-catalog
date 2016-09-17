@@ -12,7 +12,6 @@
       label: port
       required:true
       type: int
-      default: 8061
     - variable: BASE_APP_URL
       label: For embeds that require render, baseAppUrl will be used as the host. Ex your http://domain.com
       required: true
@@ -21,4 +20,3 @@
       label: Access-Control-Allow-Origin list.
       type:string
       required: true
-      default: *
