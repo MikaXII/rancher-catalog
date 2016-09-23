@@ -4,16 +4,16 @@
   description: botbot
   uuid: botbot-0
   questions:
-    - variable: int_port
-      label: "public port"
+    - variable: "int_port"
+      label: "public port : "
       required: true
       type: "int"
-      default: "80"
-    - variable: ext_port
+      default: 80
+    - variable: "ext_port"
       label: "private port"
       required: true
       type: "int"
-      default: "8080"
+      default: 8080
     - variable: PG_PASS
       label: "postgres passwd"
       required: true
@@ -21,7 +21,7 @@
       default: "admin"
     - variable: PG_USER
       label: "postgres user"
-      type:"string"
+      type: "string"
       required: true
       default: "admin"
     - variable: PG_DB
@@ -31,14 +31,14 @@
       default: "botbot"
     - variable: PG_PUB_PORT
       label: "postgres public port"
-      type: "string"
+      type: "int"
       required: true
-      default: "5432"
+      default: 5432
     - variable: REDIS_PUB_PORT
       label: "redis public port"
       type: "int"
       required: true
-      default: "6379"
+      default: 6379
     - variable: BB_SECRET_KEY
       label: "secret key"
       type: "string"
