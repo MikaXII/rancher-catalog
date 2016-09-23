@@ -1,6 +1,6 @@
 .catalog:
   name: Botbot
-  version: 0.1-rancher1
+  version: v0.1
   description: botbot
   uuid: botbot-0
   questions:
@@ -23,7 +23,7 @@
       label: postgres user
       type: string
       required: true
-     default: "admin"
+      default: "admin"
     - variable: PG_DB
       label: postgres default database
       type: string
