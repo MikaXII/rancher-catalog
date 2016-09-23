@@ -3,5 +3,4 @@ description: "Botbot for irc log"
 version: 0.1-rancher1
 category: Applications
 maintainer: "MikaXII <mika@recalbox.com>"
-minimum_rancher_version: v0.59.0
 license: GPL
