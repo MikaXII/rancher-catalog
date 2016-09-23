@@ -6,6 +6,9 @@ dokuwiki:
   - dokuwiki-data
   labels:
     io.rancher.sidekicks: dokuwiki-data
+    traefik.enable: stack
+    traefik.domain: geekael.fr
+    traefik.port: 80
 dokuwiki-data:
   image: busybox
   net: none
