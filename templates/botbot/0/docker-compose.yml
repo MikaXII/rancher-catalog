@@ -4,14 +4,14 @@ postgres:
     - POSTGRES_PASSWORD=${PG_PASS}
     - POSTGRES_USER=${PG_USER}
     - POSTGRES_DB=${PG_DB}
-  port:
+  ports:
     - ${PG_PUB_PORT}:5432
     
 redis:
   image: "redis:3.2.3"
   volumes_from:
     - "redis-data"
-  port:
+  ports:
     - ${REDIS_PUB_PORT}:6379
     
 redis-data:
@@ -19,7 +19,7 @@ redis-data:
   
 botbot-web:
   image: "mikaxii/botbot"
-  port:
+  ports:
     - ${ext_port}/${int_port}
   environments:
     - STORAGE_URL="postgres://${PG_USER}:${PG_PASS}@postgres:5432/${PG_DB}"
