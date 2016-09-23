@@ -1,11 +1,3 @@
-postgres:
-  image: "postgres:9.5.4"
-  environment:
-    - POSTGRES_PASSWORD=${PG_PASS}
-    - POSTGRES_USER=${PG_USER}
-    - POSTGRES_DB=${PG_DB}
-  ports:
-    - ${PG_PUB_PORT}:5432/tcp
 redis:
   image: "redis:3.2.3"
   volumes_from:
@@ -14,19 +6,3 @@ redis:
     - ${REDIS_PUB_PORT}:6379/tcp
 redis-data:
   image: "alpine"
-botbot-web:
-  image: "mikaxii/botbot"
-  ports:
-    - ${ext_port}:${int_port}/tcp
-  environment:
-    - STORAGE_URL="postgres://${PG_USER}:${PG_PASS}@postgres:5432/${PG_DB}"
-    - QUEUE_URL="redis://redis:6379/1 botbot-bot"
-    - SECRET_KEY=${BB_SECRET_KEY}
-    - WEB_PORT=${int_port}
-    - WEB_SECRET_KEY=${BB_WEB_SECRET_KEY}
-    - PUSH_STREAM_URL="${BB_URL}/pub/?id={id}"
-    - LANG=en_US.UTF-8
-    - PYTHONIOENCODING=utf8
-  links:
-    - postgres/postgres
-    - redis/redis
