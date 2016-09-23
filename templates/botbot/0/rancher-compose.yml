@@ -45,12 +45,12 @@
       required: true
       default: "supersecretkey"
     - variable: BB_WEB_SECRET_KEY
-      label: "redis public port"
+      label: "secret web"
       type: "string"
       required: true
       default: "supersecretkeyweb"
     - variable: BB_URL
-      label: "redis public port"
+      label: "url"
       type: "string"
       required: true
       default: "http://localhost:8080"
