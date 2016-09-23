@@ -5,19 +5,19 @@ postgres:
     - POSTGRES_USER=${PG_USER}
     - POSTGRES_DB=${PG_DB}
   ports:
-    - ${PG_PUB_PORT}/5432
+    - ${PG_PUB_PORT}:5432
 redis:
   image: "redis:3.2.3"
   volumes_from:
     - "redis-data"
   ports:
-    - ${REDIS_PUB_PORT}/6379
+    - ${REDIS_PUB_PORT}:6379
 redis-data:
   image: "alpine"
 botbot-web:
   image: "mikaxii/botbot"
   ports:
-    - ${ext_port}/${int_port}
+    - ${ext_port}:${int_port}
   environment:
     - STORAGE_URL="postgres://${PG_USER}:${PG_PASS}@postgres:5432/${PG_DB}"
     - QUEUE_URL="redis://redis:6379/1 botbot-bot"
