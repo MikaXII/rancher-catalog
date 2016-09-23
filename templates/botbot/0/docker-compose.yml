@@ -10,8 +10,12 @@ redis:
   image: "redis:3.2.3"
   volumes_from:
     - "redis-data"
+  labels:
+    io.rancher.sidekicks: redis-data
 redis-data:
   image: "alpine"
+  labels:
+    io.rancher.container.start_once: 'true'
 botbot-web:
   image: "mikaxii/botbot"
   ports:
