@@ -5,13 +5,13 @@ postgres:
     - POSTGRES_USER=${PG_USER}
     - POSTGRES_DB=${PG_DB}
   ports:
-    - ${PG_PUB_PORT}:5432
+    - ${PG_PUB_PORT}/5432
 redis:
   image: "redis:3.2.3"
   volumes_from:
     - "redis-data"
   ports:
-    - ${REDIS_PUB_PORT}:6379
+    - ${REDIS_PUB_PORT}/6379
 redis-data:
   image: "alpine"
 botbot-web:
