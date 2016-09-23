@@ -27,7 +27,7 @@ botbot-web:
     - SECRET_KEY=${BB_SECRET_KEY}
     - WEB_PORT=${int_port}
     - WEB_SECRET_KEY=${BB_WEB_SECRET_KEY}
-    - PUSH_STREAM_URL=${BB_URL} # http://localhost:8080/pub/?id={id}
+    - PUSH_STREAM_URL=${BB_URL}/pub/?id={id}
     - LANG=en_US.UTF-8
     - PYTHONIOENCODING=utf8
   links:
