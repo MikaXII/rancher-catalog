@@ -18,7 +18,7 @@ redis-data:
   image: "alpine"
   
 botbot-web:
-  image: "todo"
+  image: "mikaxii/botbot"
   port:
     - ${ext_port}/${int_port}
   environments:
