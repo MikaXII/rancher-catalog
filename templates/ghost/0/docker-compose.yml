@@ -7,7 +7,7 @@ ghost:
   - DB_PASSWD="${db_passwd}"
   - DB_NAME="${db_name}"
   - IP_LISTEN="${ip_listen}"
-  - PORT_LISTEN="{port_listen}"
+  - PORT_LISTEN="{port}"
   ports: 
   - ${port}:2368/tcp
 

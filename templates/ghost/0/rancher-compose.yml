@@ -9,7 +9,7 @@
       required: true
       type: string
       default: "0.0.0.0"
-    - variable: port_listen
+    - variable: port
       label: port
       required: true
       type: int
