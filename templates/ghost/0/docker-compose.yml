@@ -1,0 +1,16 @@
+ghost:
+  image: recalbox/ghost
+  environment:
+    GHOST_URL="${ghost_url}"
+    DB_HOST="${db_host}"
+    DB_USER="${db_user}"
+    DB_PASSWD="${db_passwd}"
+    DB_NAME="${db_name}"
+    IP_LISTEN="${ip_listen}"
+    PORT_LISTEN="{port_listen}"
+  ports: 
+  - ${port}:2368/tcp
+
+
+
+
