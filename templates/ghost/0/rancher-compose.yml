@@ -15,7 +15,7 @@
       type: int
       default: "2368"
     - variable: ghost_url
-      label:blog url
+      label: blog url
       required: true
       type: string
       default: "http://yourdomain.com"
