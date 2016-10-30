@@ -10,6 +10,10 @@ ghost:
   - PORT_LISTEN="{port}"
   ports: 
   - ${port}:2368/tcp
+  labels:
+  - traefik.domain: geekael.fr
+  - traefik.port: '2368'
+  - traefik.enable: stack
 
 
 
