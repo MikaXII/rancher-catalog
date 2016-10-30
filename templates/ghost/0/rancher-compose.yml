@@ -31,7 +31,7 @@
       default: "user"
     - variable: db_passwd
       label: db_passwd
-      type: passord
+      type: string
       required: true
       default: "password"
     - variable: db_name
