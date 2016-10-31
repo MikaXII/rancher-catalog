@@ -15,9 +15,7 @@ ghost:
     traefik.port: '2368'
     traefik.enable: "stack"
   volumes:
-  - /usr/src/ghost/content/apps:/ghost/content/apps
-  - /usr/src/ghost/content/apps:/ghost/content/data
-  - /usr/src/ghost/content/apps:/ghost/content/images
+  - "${ghost_data}":/var/lib/ghost
   volume_driver: ${volume_driver}
 
 
