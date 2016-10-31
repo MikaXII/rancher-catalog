@@ -15,7 +15,7 @@ ghost:
     traefik.port: '2368'
     traefik.enable: "stack"
   volumes:
-  - "${ghost_data}":/var/lib/ghost
+  - ${ghost_data}:/var/lib/ghost
   volume_driver: ${volume_driver}
 
 
