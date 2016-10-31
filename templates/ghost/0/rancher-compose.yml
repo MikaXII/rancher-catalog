@@ -45,6 +45,11 @@
       type: string
       required: true
       default: "convoy-nfs"
+    - variable: ghost_data
+      label: volume_driver (data volume)
+      type: string
+      required: true
+      default: "ghost-data"
 ghost-lb:
   scale: 1
   health_check:
