@@ -15,6 +15,8 @@ ghost:
   volumes:
   - ${ghost_data}:/var/lib/ghost
   volume_driver: ${volume_driver}
+  external_links:
+  -  galera/galera:${db_host}
 ghost-lb:
   expose:
   -  2368:2369/tcp
