@@ -20,7 +20,7 @@ ghost:
 ghost-lb:
   image: rancher/load-balancer-service
   expose:
-  -  2368:2369/tcp
+  -  2368:2368/tcp
   tty: true
   links:
   - ghost:ghost
