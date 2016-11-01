@@ -18,6 +18,7 @@ ghost:
   external_links:
   -  galera/galera:${db_host}
 ghost-lb:
+  image: rancher/load-balancer-service
   expose:
   -  2368:2369/tcp
   tty: true
