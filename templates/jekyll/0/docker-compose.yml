@@ -1,4 +1,4 @@
-ghost:
+jekyll:
   image: mikaxii/recalblog 
   environment:
   - JEKYLL_ENV=production

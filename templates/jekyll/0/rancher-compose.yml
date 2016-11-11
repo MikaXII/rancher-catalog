@@ -9,11 +9,16 @@
       label: repo to sync (https:github.com/user/repo)
       type: string
       required: true
+    - variable: port
+      label: public port to expose
+      type: int
+      required: true
+      default: 4000
   health_check:
-    port: 2368
+    port: 4000
     interval: 2000
     initializing_timeout: 60000
     unhealthy_threshold: 3
     strategy: recreate
-    request_line: GET "/" "HTTP/1.0"
     healthy_threshold: 2
+    response_timeout: 2000
