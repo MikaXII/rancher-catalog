@@ -2,6 +2,7 @@ ghost:
   image: mikaxii/recalblog 
   environment:
   - JEKYLL_ENV=production
+  - REPO_GIT=${repo_git}
   ports: 
   - ${port}:4000/tcp
   labels:

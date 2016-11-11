@@ -5,7 +5,7 @@
   uuid: ghost-0
   scale: 1
   questions:
-    - variable: repo 
+    - variable: repo_git 
       label: repo to sync (https:github.com/user/repo)
       type: string
       required: true
