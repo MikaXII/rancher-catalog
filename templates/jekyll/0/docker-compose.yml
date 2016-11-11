@@ -1,0 +1,13 @@
+ghost:
+  image: mikaxii/recalblog 
+  environment:
+  - JEKYLL_ENV=production
+  ports: 
+  - ${port}:4000/tcp
+  labels:
+    traefik.domain: "geekael.fr"
+    traefik.port: '4000'
+    traefik.enable: "stack"
+
+
+

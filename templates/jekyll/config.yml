@@ -1,0 +1,5 @@
+name: jekyll 
+description: jekyll blog 
+version: v0.1-rancher1
+category: blog
+maintainer: MikaXII<mika@recalbox.com>
