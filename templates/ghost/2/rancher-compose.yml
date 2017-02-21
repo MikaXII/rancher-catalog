@@ -32,7 +32,7 @@
       healthy_threshold: 2
       port: 2368
       unhealthy_threshold: 3
-      initializing_timeout: 60000
+      initializing_timeout: 150000
       interval: 2000
       strategy: recreate
       reinitializing_timeout: 60000
