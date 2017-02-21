@@ -1,6 +1,6 @@
 name: ghost
 description: ghost blog 
-version: v0.11.2-rancher1
+version: v0.11.4
 category: blog
 maintainer: MikaXII<mika@recalbox.com>
 projectURL: https://github.com/MikaXII/rancher-ghost

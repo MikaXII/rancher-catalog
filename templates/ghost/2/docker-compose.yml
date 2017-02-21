@@ -1,0 +1,15 @@
+ghost:
+  image: mikaxii/alpine-ghost:0.11.4
+  environment:
+  - GHOST_URL="${ghost_url}"
+  - GHOST_IP="${ghost_ip}"
+  - GHOST_port="{ghost_port}"
+  labels:
+    traefik.domain: "geekael.fr"
+    traefik.port: '2368'
+    traefik.enable: "stack"
+  volumes:
+  - ${ghost_data}:/home/ghost/content
+  expose:
+  -  2368:2368/tcp
+  tty: true
