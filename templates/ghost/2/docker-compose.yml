@@ -9,7 +9,7 @@ ghost:
     traefik.port: '2368'
     traefik.enable: "stack"
   volumes:
-  - ${ghost_data}:/home/ghost/content
+  - ${ghost_data}:/home/ghost/blog/content
   expose:
   -  2368:2368/tcp
   tty: true
