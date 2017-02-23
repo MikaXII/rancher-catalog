@@ -38,11 +38,13 @@
       type: string
       required: true
     - variable: proxy_http
-      label: int
+      label: reverse proxy http port
+      type: int
       required: true
       default: 80 
     - variable: proxy_https
-      label: int
+      label: reverse proxy https port
+      type: int
       required: true
       default: 443  
 ghost:
