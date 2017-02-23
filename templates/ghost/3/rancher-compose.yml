@@ -59,3 +59,5 @@ ghost:
     interval: 2000
     strategy: recreate
     reinitializing_timeout: 60000
+nginx:
+  scale: 1

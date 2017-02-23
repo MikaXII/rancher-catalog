@@ -9,6 +9,8 @@ ghost:
   expose:
   -  2368:2368/tcp
   tty: true
+  labels:
+    io.rancher.sidekicks: nginx
 nginx:
   image: mikaxii/nginx-reverse-proxy:1.10.3-alpine
   environment:
