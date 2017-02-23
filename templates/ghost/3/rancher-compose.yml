@@ -37,6 +37,14 @@
       label: domaine name(s) separate by space
       type: string
       required: true
+    - variable: proxy_http
+      label: int
+      required: true
+      default: 80 
+    - variable: proxy_https
+      label: int
+      required: true
+      default: 443  
 ghost:
   scale: 1
   start_on_create: true
