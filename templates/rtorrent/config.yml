@@ -1,0 +1,5 @@
+name: rutorrent
+description: |
+  rTorrent for rancher
+version: v101
+category: Applications
