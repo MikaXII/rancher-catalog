@@ -1,7 +1,0 @@
-name: BOT IRC
-description: BOT IRC
-version: v0.1
-category: application
-maintainer: MikaXII<mika@recalbox.com>
-license: Creative C
-projectURL: https://github.com/MikaXII/sopel-docker

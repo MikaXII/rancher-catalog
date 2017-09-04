@@ -1,8 +1,0 @@
-recalbot:
-  image: mikaxii/slackbridge
-  environment:
-    TOKEN: ${TOKEN}
-    BOTNAME: ${BOTNAME}
-    SERVER: ${SERVER}
-    PASSWORD: ${PASSWORD}
-    IRCCHAN: ${IRCCHAN}
