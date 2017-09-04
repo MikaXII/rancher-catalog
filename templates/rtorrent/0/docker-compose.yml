@@ -2,8 +2,8 @@ rtorrent:
   pid: host
   volumes:
     - ${download_dir}:/downloads
-  image: linuxserver/rutorrent
+  image: diameter/rtorrent-rutorrent:stable
   ports:
   - ${public_port}:80
-  - 51413:51413
-  - 6881:6881/udp
+  - 49161:49161
+  - 49160:49160/udp

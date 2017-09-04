@@ -1,7 +1,7 @@
 .catalog:
     name: "rTorrent"
-    version: "v101"
-    description: "rtorrent - linuxservier.io"
+    version: "v1.0"
+    description: "rtorrent - diameter/rtorrent-rutorrent"
     questions:
      - variable: "download_dir"
        description: "Download directory"
