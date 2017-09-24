@@ -1,0 +1,33 @@
+.catalog:
+  name: Slackbridge
+  version: v0.1
+  description: Slackbridge
+  uuid: Slackbridge-0
+  questions:
+    - variable: BOTNAME 
+      label: Nickname of bot
+      required: true
+      type: string
+    - variable: SERVER
+      label: irc host
+      description: |
+        ex irc.freenode.net
+      required: true
+      type: string
+    - variable: PASSWORD
+      label: Password
+      description: |
+        Owner
+      required: true
+      type: string
+    - variable: TOKEN
+      label: slack token
+      description: slack token
+      required: true
+      type: string
+    - variable: IRCCHAN
+      label: IRC_CHAN
+      description: |
+        IRC_CHANS
+      required: true
+      type: string
