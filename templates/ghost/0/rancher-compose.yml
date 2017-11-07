@@ -1,0 +1,23 @@
+.catalog:
+    name: "ghost"
+    version: "v1.16.2-rancher1"
+    description: "ghost blog"
+    questions:
+     - variable: "ghost_data"
+       description: "ghost content directory"
+       label: "ghost directory"
+       required: true
+       type: "string"
+       default: "/ghost-data"
+     - variable: "public_port"
+       description: "Public port"
+       label: "Public port for ui"
+       required: true
+       type: "int"
+       default: 2368
+     - variable: "url"
+       description: "blog url"
+       label: "blog url"
+       required: true
+       type: "string"
+       default: "https://yourdomain.com"

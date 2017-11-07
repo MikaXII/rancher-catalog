@@ -1,0 +1,5 @@
+name: ghost
+description: |
+  ghost blog for rancher
+version: v1.16.2-rancher1
+category: Blog
