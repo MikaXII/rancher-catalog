@@ -1,5 +1,4 @@
-rtorrent:
-  pid: host
+peertube:
   volumes:
     - ${peertube_volume}:/Peertube
   image: mikaxii/peertube:latest
