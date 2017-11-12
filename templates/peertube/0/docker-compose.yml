@@ -9,7 +9,8 @@ peertube:
     - DATABASE_PORT=${db_port}
     - DATABASE_USERNAME=${db_user}
     - DATABASE_PASSWORD=${db_pass}
-  external_links:
+    - HOSTNAME=peertube.geekael.fr
+  links:
     - ${postgres}:${postgres}
   labels:
     - "traefik.enable=true"
