@@ -1,0 +1,41 @@
+.catalog:
+    name: "peertube"
+    version: "v0.1"
+    description: "peertube"
+    questions:
+     - variable: "peertube_volume"
+       description: "peertube directory"
+       label: "peetube directory"
+       required: true
+       type: "string"
+       default: "/peertube"
+     - variable: "public_port"
+       description: "Public port"
+       label: "Public port for ui"
+       required: true
+       type: "int"
+       default: 8080
+     - variable: "postgres"
+       description: "Postgres service"
+       label: "postgres link"
+       required: true
+       type: "string"
+       default: "postgres"
+     - variable: "db_port"
+       description: "postgres port"
+       label: "Postgres port"
+       required: true
+       type: "int"
+       default: 5432
+     - variable: "db_user"
+       description: "Postgres user"
+       label: "Postgres user"
+       required: true
+       type: "string"
+       default: "user"
+     - variable: "db_pass"
+       description: "Postgres pass"
+       label: "Postgres pass"
+       required: true
+       type: "password"
+       default: "12345"

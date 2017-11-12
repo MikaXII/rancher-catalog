@@ -1,0 +1,19 @@
+rtorrent:
+  pid: host
+  volumes:
+    - ${peertube_volume}:/Peertube
+  image: mikaxii/peertube:latest
+  ports:
+  - ${public_port}:8080
+  environment:
+    - DATABASE_HOST=${postgres}
+    - DATABASE_PORT=${db_port}
+    - DATABASE_USERNAME=${db_user}
+    - DATABASE_PASSWORD=${db_pass}
+  external_links:
+    - ${postgres}:${postgres}
+  labels:
+    - "traefik.enable=true"
+    - "traefik.domain=geekael.fr"
+    - "traefik.frontend.rule=Host:peertube.geekael.fr"
+    - "traefik.port=8080"
