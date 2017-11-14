@@ -2,7 +2,7 @@ rtorrent:
   pid: host
   volumes:
     - ${download_dir}:/downloads
-  image: diameter/rtorrent-rutorrent:stable
+  image: diameter/rtorrent-rutorrent:latest
   ports:
   - ${public_port}:80
   - 49161:49161
