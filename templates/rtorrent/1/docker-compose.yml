@@ -1,0 +1,32 @@
+rtorrent:
+  pid: host
+  volumes:
+    - ${download_dir}:/downloads
+  image: diameter/rtorrent-rutorrent:latest
+  ports:
+  - ${public_port}:80
+  - 49161:49161
+  - 49160:49160/udp
+  labels:
+  - "traefik.enable=true"
+  - "traefik.domain=geekael.fr"
+  - "traefik.frontend.rule=Host:rutorrent.geekael.fr"
+  - "traefik.port=80"
+  environment:
+  - USR_ID=${USR_ID} 
+  - GRP_ID=${GRP_ID}
+  health_check:
+    # Which port to perform the check against
+    port: 80
+    # Interval is measured in milliseconds
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    # Strategy for what to do when unhealthy
+    # In this service, Rancher will recreate any unhealthy containers
+    strategy: recreate
+    healthy_threshold: 2
+    # Response timeout is measured in milliseconds
+    response_timeout: 2000
+
+
