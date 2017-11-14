@@ -2,9 +2,17 @@ rtorrent:
   pid: host
   volumes:
     - ${download_dir}:/downloads
-  image: linuxserver/rutorrent:104
+  image: linuxserver/rutorrent:latest
   ports:
   - ${public_port}:80
   - 51413:51413
   - 5000:5000
   - 6881:6881/udp
+  labels:
+  - "traefik.enable=true"
+  - "traefik.domain=geekael.fr"
+  - "traefik.frontend.rule=Host:torrent.geekael.fr"
+  - "traefik.port=80"
+  - "traefik.frontend.auth.basic=MikaXII:$apr1$xuQlknc1$q3ttu6Aa/mg.BTJHpZ/D3."
+
+
