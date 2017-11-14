@@ -11,8 +11,21 @@ rtorrent:
   labels:
   - "traefik.enable=true"
   - "traefik.domain=geekael.fr"
-  - "traefik.frontend.rule=Host:torrent.geekael.fr"
+  - "traefik.frontend.rule=Host:rutorrent.geekael.fr"
   - "traefik.port=80"
   - "traefik.frontend.auth.basic=MikaXII:$apr1$xuQlknc1$q3ttu6Aa/mg.BTJHpZ/D3."
+  health_check:
+    # Which port to perform the check against
+    port: 80
+    # Interval is measured in milliseconds
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    # Strategy for what to do when unhealthy
+    # In this service, Rancher will recreate any unhealthy containers
+    strategy: recreate
+    healthy_threshold: 2
+    # Response timeout is measured in milliseconds
+    response_timeout: 2000
 
 
