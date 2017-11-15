@@ -27,12 +27,6 @@
        required: true
        type: "string"
        default: "test:$apr1$m5NOypU8$TfPxBTXOeOfnGSX4Mbe9t1"
-     - variable: "traefik_domain"
-       description: "your domain name"
-       label: "yourdomain.com"
-       required: true
-       type: "string"
-       default: 8080
      - variable: "USR_ID"
        description: "UserID"
        label: "User id"
