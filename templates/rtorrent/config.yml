@@ -1,5 +1,5 @@
 name: rutorrent
 description: |
-  rTorrent for rancher
-version: v1.0-rancher2
+  rTorrent for rancher with traefik as lb
+version: v1.1
 category: Applications
