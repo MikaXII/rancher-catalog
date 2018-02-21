@@ -1,7 +1,6 @@
 version: '2'
 
 services:
-
   nextcloud:
     image: nextcloud:13-apache
     volumes_from:
@@ -11,9 +10,13 @@ services:
     depends_on:
       - mariadb
     labels:
-      io.rancher.sidekicks: nextcloud-data
-      io.rancher.container.hostname_override: container_name
-      io.rancher.scheduler.affinity: traefik.enable=true, traefik.domain=${traefik_domain}, traefik.port=80, traefik.frontend.rule=${traefik_frontend_url}, traefik.frontend.auth.basic=${traefik_basic_auth}
+    - io.rancher.sidekicks: nextcloud-data
+    - io.rancher.container.hostname_override: container_name
+    - "traefik.enable=true"
+    - "traefik.domain=${traefik_domain}"
+    - "traefik.frontend.rule=${traefik_frontend_url}"
+    - "traefik.port=80"
+    - "traefik.frontend.auth.basic=${traefik_basic_auth}"
 
   nextcloud-data:
     image: nextcloud:13-apache
