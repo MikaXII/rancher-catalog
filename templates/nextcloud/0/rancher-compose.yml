@@ -41,12 +41,24 @@ catalog:
       required: true
       type: "string"
       default: "Host:stack.yourdomain.com"
-    - variable: "traefik_basic_auth"
-      description: "Basic auth in csv format : User:Hash,User:Hash. Default test/test123"
-      label: "Basic auth"
+    - variable: "enable_traefik"
+      description: "Enable traefik as lb"
+      label: "Enable traefik"
+      required: true
+      type: "boolean"
+      default: true
+    - variable: "volume_data"
+      description: "volume to expose users data"
+      label: "users data"
       required: true
       type: "string"
-      default: "test:$apr1$m5NOypU8$TfPxBTXOeOfnGSX4Mbe9t1"
+      default: "/tmp"
+    - variable: "volume_mysql"
+      description: "volume to expose mysql data"
+      label: "mysql data"
+      required: true
+      type: "string"
+      default: "/tmp"
 
 services:
 
