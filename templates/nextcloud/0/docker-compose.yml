@@ -1,13 +1,6 @@
 version: '2'
 
 services:
-
-  labels:
-      - "traefik.enable=true"
-      - "traefik.domain=${traefik_domain}"
-      - "traefik.frontend.rule=${traefik_frontend_url}"
-      - "traefik.port=80"
-      - "traefik.frontend.auth.basic=${traefik_basic_auth}"
   
   nextcloud:
     image: nextcloud:13-apache
@@ -20,6 +13,11 @@ services:
     labels:
       io.rancher.sidekicks: nextcloud-data
       io.rancher.container.hostname_override: container_name
+      traefik.enable: true
+      traefik.domain: ${traefik_domain}
+      traefik.frontend.rule: ${traefik_frontend_url}
+      traefik.port: 80
+      traefik.frontend.auth.basic: ${traefik_basic_auth}
 
   nextcloud-data:
     image: nextcloud:13-apache
