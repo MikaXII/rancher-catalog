@@ -23,7 +23,7 @@ services:
     entrypoint:
       - /bin/true
     volumes:
-      - /var/www/html
+      - ${volume_data}:/var/www/html
     labels:
       io.rancher.container.start_once: 'true'
       io.rancher.container.hostname_override: container_name
@@ -44,7 +44,7 @@ services:
     entrypoint:
       - /bin/true
     volumes:
-      - /var/lib/mysql
+      - ${volume_mysql}:/var/lib/mysql
     tty: true
     labels:
       io.rancher.container.start_once: 'true'
