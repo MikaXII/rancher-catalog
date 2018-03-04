@@ -34,13 +34,13 @@ version: '2'
        label: "Postgres user"
        required: true
        type: "string"
-       default: "user"
+       default: "peertube"
      - variable: "DB_PASSWORD"
        description: "Postgres pass"
        label: "Postgres pass"
        required: true
        type: "password"
-       default: "12345"
+       default: "peertube"
      - variable: "PEERTUBE_SIGNUP"
        description: "Enable signup"
        label: "Enable signup"
@@ -77,3 +77,9 @@ version: '2'
        required: true
        type: "string"
        default: "/postgres"
+     - variable: "DATABASE_HOST"
+       description: "DATABASE_HOST"
+       label: "DATABASE_HOST"
+       required: true
+       type: "string"
+       default: "db"
