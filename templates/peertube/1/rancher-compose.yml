@@ -1,0 +1,77 @@
+.catalog:
+    name: "peertube"
+    version: "v0.2-rancher-1"
+    description: "peertube"
+    questions:
+     - variable: "PEERTUBE_HOSTNAME"
+       description: "Domain name"
+       label: "Domain name"
+       required: true
+       type: "string"
+       default: "your.domain.tld"
+     - variable: "PEERTUBE_PORT"
+       description: "Peertube internal port"
+       label: "Port"
+       required: true
+       type: "int"
+       default: 443
+     - variable: "PEERTUBE_HTTPS"
+       description: "Enable https"
+       label: "Enable https"
+       required: true
+       type: "bool"
+       default: true
+     - variable: "PEERTUBE_ADMIN_MAIL"
+       description: "Admin email"
+       label: "Admin email"
+       required: true
+       type: "string"
+       default: "admin@domain.com"
+     - variable: "DB_USER"
+       description: "Postgres user"
+       label: "Postgres user"
+       required: true
+       type: "string"
+       default: "user"
+     - variable: "DB_PASSWORD"
+       description: "Postgres pass"
+       label: "Postgres pass"
+       required: true
+       type: "password"
+       default: "12345"
+     - variable: "PEERTUBE_SIGNUP"
+       description: "Enable signup"
+       label: "Enable signup"
+       required: true
+       type: "bool"
+       default: false
+     - variable: "PEERTUBE_TRANSCODING_ENABLE"
+       description: "Enable transcoding"
+       label: "Enable transcoding"
+       required: true
+       type: "bool"
+       default: false
+     - variable: "TRAEFIK_PORT"
+       description: "Traefik port"
+       label: "Traefik port"
+       required: true
+       type: "int"
+       default: 9000
+     - variable: "TRAEFIK_ENABLE"
+       description: "Enable traefik lb"
+       label: "Enable traefik lb"
+       required: true
+       type: "bool"
+       default: true
+     - variable: "PEERTUBE_DATA_VOLUME"
+       description: "Peertube data volume"
+       label: "Peertube data volume"
+       required: true
+       type: "string"
+       default: "/peertube"
+     - variable: "POSTGRES_DATA_VOLUME"
+       description: "Postgres data volume"
+       label: "Postgres data volume"
+       required: true
+       type: "string"
+       default: "/postgres"

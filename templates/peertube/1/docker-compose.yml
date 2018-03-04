@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  peertube:
+
+    image: mikaxii/peertube:latest
+    environment:
+      PEERTUBE_HOSTNAME: ${PEERTUBE_HOSTNAME}
+      PEERTUBE_PORT: ${PEERTUBE_PORT}
+      PEERTUBE_HTTPS: ${PEERTUBE_HTTPS}
+      PEERTUBE_ADMIN_EMAIL: ${PEERTUBE_ADMIN_MAIL}
+      PEERTUBE_DB_USERNAME: ${DB_USER}
+      PEERTUBE_DB_PASSWORD: ${DB_PASSWORD}
+      PEERTUBE_SIGNUP_ENABLED: ${PEERTUBE_SIGNUP}
+      PEERTUBE_TRANSCODING_ENABLED: ${PEERTUBE_TRANSCODING_ENABLE}
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
+    labels:
+      traefik.enable: ${TRAEFIK_ENABLE}
+      traefik.frontend.rule: "Host:${PEERTUBE_HOSTNAME}"
+      traefik.port: ${TRAEFIK_PORT}
+    volumes:
+      - ${PEERTUBE_DATA_VOLUME}:/usr/src/app/data
+    depends_on:
+      - db
+
+  db:
+    image: postgres:10
+    environment:
+      POSTGRES_USERNAME: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: peertube_prod
+    volumes:
+      - ${POSTGRES_DATA_VOLUME}:/var/lib/postgresql/data
