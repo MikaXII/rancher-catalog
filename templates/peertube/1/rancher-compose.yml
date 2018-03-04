@@ -1,3 +1,5 @@
+version: '2'
+
 .catalog:
     name: "peertube"
     version: "v0.2-rancher-1"
@@ -19,7 +21,7 @@
        description: "Enable https"
        label: "Enable https"
        required: true
-       type: "bool"
+       type: "boolean"
        default: true
      - variable: "PEERTUBE_ADMIN_MAIL"
        description: "Admin email"
@@ -43,13 +45,13 @@
        description: "Enable signup"
        label: "Enable signup"
        required: true
-       type: "bool"
+       type: "boolean"
        default: false
      - variable: "PEERTUBE_TRANSCODING_ENABLE"
        description: "Enable transcoding"
        label: "Enable transcoding"
        required: true
-       type: "bool"
+       type: "boolean"
        default: false
      - variable: "TRAEFIK_PORT"
        description: "Traefik port"
@@ -61,7 +63,7 @@
        description: "Enable traefik lb"
        label: "Enable traefik lb"
        required: true
-       type: "bool"
+       type: "boolean"
        default: true
      - variable: "PEERTUBE_DATA_VOLUME"
        description: "Peertube data volume"
