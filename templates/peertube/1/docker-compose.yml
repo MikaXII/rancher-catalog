@@ -6,7 +6,7 @@ services:
     image: mikaxii/peertube:latest
     environment:
       PEERTUBE_HOSTNAME: ${PEERTUBE_HOSTNAME}
-      PEERTUBE_PORT: ${PEERTUBE_PORT}
+      PEERTUBE_PORT: 443
       PEERTUBE_HTTPS: ${PEERTUBE_HTTPS}
       PEERTUBE_ADMIN_EMAIL: ${PEERTUBE_ADMIN_MAIL}
       PEERTUBE_DB_USERNAME: ${DB_USER}
