@@ -3,7 +3,7 @@ version: '2'
 services:
   peertube:
 
-    image: mikaxii/peertube:unstable
+    image: mikaxii/peertube:alpine-1.0.0-beta.1
     environment:
       PEERTUBE_HOSTNAME: ${PEERTUBE_HOSTNAME}
       PEERTUBE_PORT: 443
