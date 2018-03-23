@@ -37,7 +37,7 @@ services:
     environment:
       POSTGRES_USERNAME: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: peertube
+      POSTGRES_DB: peertube_prod
     volumes:
       - ${POSTGRES_DATA_VOLUME}:/var/lib/postgresql/data
     restart: "always"

@@ -77,7 +77,7 @@ version: '2'
        required: true
        type: "string"
        default: "/postgres"
-     - variable: REDIS_DATA_VOLUME"
+     - variable: "REDIS_DATA_VOLUME"
        description: "Redis data volume"
        label: "Redis data volume"
        required: true
