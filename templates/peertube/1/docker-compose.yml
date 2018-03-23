@@ -13,7 +13,11 @@ services:
       PEERTUBE_DB_PASSWORD: ${DB_PASSWORD}
       PEERTUBE_SIGNUP_ENABLED: ${PEERTUBE_SIGNUP}
       PEERTUBE_TRANSCODING_ENABLED: ${PEERTUBE_TRANSCODING_ENABLE}
-      DATABASE_HOST: "db"
+      PEERTUBE_DB_HOSTNAME: postgres
+      PEERTUBE_REDIS_HOSTNAME: redis    
+      PEERTUBE_SMTP_PORT: 25
+      PEERTUBE_SMTP_FROM: noreply@${PEERTUBE_HOSTNAME}
+      PEERTUBE_SMTP_TLS: "true"
     # Traefik labels are suggested as an example for people using Traefik,
     # remove them if you are using another reverse proxy.
     labels:
@@ -23,13 +27,22 @@ services:
     volumes:
       - ${PEERTUBE_DATA_VOLUME}:/usr/src/app/data
     depends_on:
-      - db
+      - postgres
+      - redis
+    restart: "always"
 
-  db:
-    image: postgres:10
+  postgres:
+    image: postgres:10-alpine
     environment:
       POSTGRES_USERNAME: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: peertube_prod
+      POSTGRES_DB: peertube
     volumes:
       - ${POSTGRES_DATA_VOLUME}:/var/lib/postgresql/data
+    restart: "always"
+
+  redis:
+    image: redis:4-alpine
+    volumes:
+      - /data
+    restart: "always"
