@@ -1,5 +1,5 @@
 name: peertube
 description: |
   peertube for rancher
-version: v1.0.0-beta.1-rancher
+version: develop-rancher
 category: Applications

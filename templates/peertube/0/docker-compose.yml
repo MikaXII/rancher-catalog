@@ -1,19 +1,49 @@
-peertube:
-  volumes:
-    - ${peertube_volume}:/Peertube
-  image: mikaxii/peertube:latest
-  ports:
-  - ${public_port}:8080
-  environment:
-    - DATABASE_HOST=${postgres}
-    - DATABASE_PORT=${db_port}
-    - DATABASE_USERNAME=${db_user}
-    - DATABASE_PASSWORD=${db_pass}
-    - HOSTNAME=peertube.geekael.fr
-  links:
-    - ${postgres}:${postgres}
-  labels:
-    - "traefik.enable=true"
-    - "traefik.domain=geekael.fr"
-    - "traefik.frontend.rule=Host:peertube.geekael.fr"
-    - "traefik.port=8080"
+version: '2'
+
+services:
+  peertube:
+
+    image: mikaxii/peertube:develop-stretch
+    environment:
+      PEERTUBE_HOSTNAME: ${PEERTUBE_HOSTNAME}
+      PEERTUBE_PORT: 443
+      PEERTUBE_HTTPS: ${PEERTUBE_HTTPS}
+      PEERTUBE_ADMIN_EMAIL: ${PEERTUBE_ADMIN_MAIL}
+      PEERTUBE_DB_USERNAME: ${DB_USER}
+      PEERTUBE_DB_PASSWORD: ${DB_PASSWORD}
+      PEERTUBE_SIGNUP_ENABLED: ${PEERTUBE_SIGNUP}
+      PEERTUBE_TRANSCODING_ENABLED: ${PEERTUBE_TRANSCODING_ENABLE}
+      PEERTUBE_DB_HOSTNAME: postgres
+      PEERTUBE_REDIS_HOSTNAME: redis    
+      PEERTUBE_SMTP_HOSTNAME: ${PEERTUBE_HOSTNAME}
+      PEERTUBE_SMTP_PORT: 25
+      PEERTUBE_SMTP_FROM: noreply@${PEERTUBE_HOSTNAME}
+      PEERTUBE_SMTP_TLS: "true"
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
+    labels:
+      traefik.enable: ${TRAEFIK_ENABLE}
+      traefik.frontend.rule: "Host:${PEERTUBE_HOSTNAME}"
+      traefik.port: ${TRAEFIK_PORT}
+    volumes:
+      - ${PEERTUBE_DATA_VOLUME}:/data
+    depends_on:
+      - postgres
+      - redis
+    restart: "always"
+
+  postgres:
+    image: postgres:10-alpine
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: peertube
+    volumes:
+      - ${POSTGRES_DATA_VOLUME}:/var/lib/postgresql/data
+    restart: "always"
+
+  redis:
+    image: redis:4-alpine
+    volumes:
+      - ${REDIS_DATA_VOLUME}:/data
+    restart: "always"
