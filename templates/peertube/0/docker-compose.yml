@@ -3,7 +3,7 @@ version: '2'
 services:
   peertube:
 
-    image: mikaxii/peertube:develop
+    image: mikaxii/peertube:v1.0.0-beta.3
     environment:
       PEERTUBE_HOSTNAME: ${PEERTUBE_HOSTNAME}
       PEERTUBE_PORT: 443
