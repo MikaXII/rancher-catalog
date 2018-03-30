@@ -2,7 +2,7 @@ version: '2'
 
 .catalog:
     name: "peertube"
-    version: "develop-rancher"
+    version: "v1.0.0-beta.3"
     description: "peertube"
     questions:
      - variable: "PEERTUBE_HOSTNAME"
