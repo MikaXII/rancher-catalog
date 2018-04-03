@@ -1,0 +1,52 @@
+version: '2'
+
+services:
+  
+  nextcloud:
+    image: nextcloud:13-apache
+    volumes_from:
+      - nextcloud-data
+    ports:
+      - ${NEXTCLOUD_PORT}:80
+    depends_on:
+      - mariadb
+    labels:
+      io.rancher.sidekicks: nextcloud-data
+      io.rancher.container.hostname_override: container_name
+      traefik.enable: ${enable_traefik}
+      traefik.domain: ${traefik_domain}
+      traefik.frontend.rule: ${traefik_frontend_url}
+      traefik.port: 80
+
+  nextcloud-data:
+    image: nextcloud:13-apache
+    entrypoint:
+      - /bin/true
+    volumes:
+      - ${volume_data}:/var/www/html
+    labels:
+      io.rancher.container.start_once: 'true'
+      io.rancher.container.hostname_override: container_name
+
+  mariadb:
+    image: mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASS}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASS}
+    labels:
+      io.rancher.sidekicks: mariadb-data
+      io.rancher.container.hostname_override: container_name
+
+  mariadb-data:
+    image: mariadb:10
+    entrypoint:
+      - /bin/true
+    volumes:
+      - ${volume_mysql}:/var/lib/mysql
+    tty: true
+    labels:
+      io.rancher.container.start_once: 'true'
+      io.rancher.container.hostname_override: container_name
+
