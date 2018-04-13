@@ -1,0 +1,12 @@
+resilio:
+  image: resilio/sync:release-2.5.12
+  restart: on-failure
+  volumes:
+    - ${DATA_FOLDER}:/mnt/sync
+  ports:
+    - 55555
+  labels:
+    traefik.enable: ${TRAEFIK_ENABLE}
+    traefik.frontend.rule: "Host:${TRAEFIK_URL}"
+    traefik.port: ${TRAEFIK_PORT}
+    traefik.frontend.auth.basic: ${TRAEFIK_AUTH}
