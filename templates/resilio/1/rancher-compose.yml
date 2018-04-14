@@ -26,3 +26,9 @@
        required: true
        type: "string"
        default: "domain.com"
+     - variable: "TRAEFIK_ENABLE"
+       description: "enable traefik"
+       label: "enable trafik"
+       required: true
+       type: "boolean"
+       default: true
