@@ -1,0 +1,28 @@
+.catalog:
+    name: "resilio"
+    version: "v2.5.12-2"
+    description: "resilio sync"
+    questions:
+     - variable: "DATA_FOLDER"
+       description: "Data folder"
+       label: "data folder"
+       required: true
+       type: "string"
+       default: "/path/to/folder"
+     - variable: "TRAEFIK_PORT"
+       description: "Traefik port"
+       label: "Traefik port"
+       required: true
+       type: "int"
+       default: 8888
+     - variable: "TRAEFIK_URL"
+       description: "Rules for traefik url : 'Host:stack.yourdomain.com'"
+       label: "Host:stack.yourdomain.com"
+       required: true
+       type: "string"
+     - variable: "TRAEFIK_DOMAIN"
+       description: "Root domain"
+       label: "yourdomain.tld"
+       required: true
+       type: "string"
+       default: "domain.com"
